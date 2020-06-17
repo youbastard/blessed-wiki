@@ -4,9 +4,9 @@ import { Link } from 'preact-router/match';
 import { shallow } from 'preact-render-spy';
 
 describe('Initial Test of the Header', () => {
-	test('Header renders 2 nav items', () => {
-		const context = shallow(<Header />);
-		expect(context.find('h1').text()).toBe('Blessed Wiki');
-		expect(context.find(<Link />).length).toBe(2);
-	});
+  test('Header renders 2 nav items', () => {
+    const context = shallow(<Header />);
+    expect(context.find('h1').text()).toBe('Blessed Wiki');
+    expect(context.find(<Link />).length).toBe(1);
+  });
 });

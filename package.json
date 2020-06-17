@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "blog",
-  "description": "Preact's netlify CMS template",
+  "name": "blessed-wiki",
+  "description": "A blog about interesting Wikipedia articles and photos",
   "version": "0.1.2",
   "license": "MIT",
   "scripts": {

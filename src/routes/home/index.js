@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';
-import Loader from '../../components/loader';
-import ArticleList from '../../components/ArticleList';
+import Loader from 'components/Loader';
+import ArticleList from 'components/ArticleList';
 import style from './style';
 
 const Home = (props) => {

@@ -79,7 +79,7 @@ code.inline {
 }
 
 .blogcover {
-  height: 30vh;
+  height: 100vh;
   background-size: cover;
   background-color: #eee;
   background-position: center;

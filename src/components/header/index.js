@@ -1,14 +1,1 @@
-import { h } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style';
-
-const Header = () => (
-  <header class={style.header}>
-    <Link href="/"><h1>Blessed Wiki</h1></Link>
-    <nav>
-      <Link activeClassName={style.active} href="/contact">Contact me</Link>
-    </nav>
-  </header>
-);
-
-export default Header;
+export { default } from './Header'

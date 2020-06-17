@@ -1,14 +1,16 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
-import Header from './header';
+
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 // Code-splitting is automated for routes
-import Home from '../routes/home';
-import Article from '../routes/article';
-import Contact from '../routes/contact';
-import ContactSuccess from '../routes/contact-success';
-import NotFoundPage from '../routes/notfound';
+import Home from 'routes/home';
+import Article from 'routes/article';
+import Contact from 'routes/contact';
+import ContactSuccess from 'routes/contact-success';
+import NotFoundPage from 'routes/notfound';
 
 export default class App extends Component {
 
@@ -16,12 +18,11 @@ export default class App extends Component {
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
 	 */
-	handleRoute = e => {
+	handleRoute = (e) => {
 	  this.currentUrl = e.url;
 	};
 
-	render(props) {
-	  console.log(props);
+	render (props) {
 	  return (
 	    <Provider value={props}>
 	      <div id="app">
@@ -33,6 +34,7 @@ export default class App extends Component {
 	          <ContactSuccess path="/contact/success" />
 	          <NotFoundPage type="404" default />
 	        </Router>
+	        <Footer />
 	      </div>
 	    </Provider>
 	  );

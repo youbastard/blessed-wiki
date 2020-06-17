@@ -1,6 +1,7 @@
 {
   "extends": "eslint-config-synacor",
   "rules": {
+    "arrow-body-style": "off",
     "indent": ["error", 2],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }]
   }
