@@ -17,4 +17,13 @@ collections:
       - { label: "Tags", name: "tags", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Image Attribution", name: "imageCC", widget: "string", required: false }
+  - name: "footerLinks"
+    label: "Footer Links"
+    label_singular: "Footer Link" # Used in the UI, ie: "New Post"
+    folder: "content/footer-links"
+    create: true
+    fields:
+      - { label: "Text", name: "text", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Is External", name: "isExternal", widget: "boolean", default: false }      
 

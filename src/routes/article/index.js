@@ -3,6 +3,8 @@ import { h } from 'preact';
 import { Suspense } from 'preact/compat';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Markdown from 'markdown-to-jsx';
+import Tag from 'components/Tag';
+import Quote from 'components/Quote';
 
 import style from './style';
 
@@ -43,14 +45,16 @@ function getBlogBody(data, isLoading) {
     const { details, content } = data.data;
     return (
       <div>
-        <h1 class={style.blogtitle}>{details.title}</h1>
-        { details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
+        <h1>{details.title}</h1>
         { details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
-        <div class={style.blogbody}>
+        <div>
           <Markdown options={{
             overrides: {
               img: {
                 component: InlineImage
+              },
+              blockquote: {
+                component: Quote
               }
             }
           }}
