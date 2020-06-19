@@ -1,3 +1,4 @@
+// import 'tachyons';
 import './style';
 import App from 'components/App';
 
