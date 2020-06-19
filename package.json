@@ -10,7 +10,7 @@
     "start:development": "npm run -s dev",
     "build": "preact build --prerenderUrls ./prerender-urls.js",
     "dev": "preact watch --prerenderUrls ./prerender-urls.js",
-    "lint": "eslint src",
+    "lint": "eslint src --fix",
     "test": "jest"
   },
   "devDependencies": {

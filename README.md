@@ -28,4 +28,9 @@ Do not add `preact build --no-prerender` to the build command as it will prevent
 
 ### TODO
 
-Add sitemaps - https://github.com/netlify-labs/netlify-plugin-sitemap#readme
+- Add sitemaps - https://github.com/netlify-labs/netlify-plugin-sitemap#readme
+- Remove .md extension from urls
+- Add meta description
+- Generate image posts for image attribution
+- Auto fix lint errors on save
+- Auto restart dev server on error
