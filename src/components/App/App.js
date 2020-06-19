@@ -28,11 +28,11 @@ export default class App extends Component {
 	      <div id="app" class="w-100 sans-serif">
 	        <SiteHeader />
 	        <Router onChange={this.handleRoute}>
-	          <Home path="/" />
-	          <Article path="/article/:name" />
 	          <Contact path="/contact/" />
 	          <ContactSuccess path="/contact/success" />
 	          <NotFoundPage type="404" default />
+	          <Home path="/" />
+	          <Article path="/article/:name" />
 	        </Router>
 	        <SiteFooter />
 	      </div>
