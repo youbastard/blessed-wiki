@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
 
-import SiteHeader from '../../components/SiteHeader';
-import SiteFooter from '../../components/SiteFooter';
+import SiteHeader from 'components/SiteHeader';
+import SiteFooter from 'components/SiteFooter';
 
 // Code-splitting is automated for routes
 import Home from 'routes/home';

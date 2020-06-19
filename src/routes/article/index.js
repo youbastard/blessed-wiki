@@ -1,68 +1,69 @@
 /* eslint-disable no-unused-vars */
 import { h } from 'preact';
-import { Suspense } from 'preact/compat';
+import { useState, useEffect } from 'preact/hooks';
 import { usePrerenderData } from '@preact/prerender-data-provider';
+import format from 'date-fns/format';
 import Markdown from 'markdown-to-jsx';
-import Tag from 'components/Tag';
-import Quote from 'components/Quote';
-
-import style from './style';
-
-const blogs = (props) => {
-  const [data, isLoading] = usePrerenderData(props);
-  return (
-    <article class={style.blogcontainer}>
-      {getBlogBody(data, isLoading)}
-    </article>
-  );
-};
+import TagList from 'components/TagList';
+import InlineQuote from 'components/Quote';
 
 function InlineImage({ alt, title, src }) {
   return (
-    <div class={style.inlineImageContainer}>
-      <img class={style.inlineImage} src={src} alt={alt} />
-      {title && <span class={style.inlineImageTitle}>{title}</span>}
+    <div>
+      <img src={src} alt={alt} />
+      {title && <span>{title}</span>}
     </div>
   );
 }
 
-function getBlogBody(data, isLoading) {
-  if (isLoading) {
-    return (
-      <div class={style.loadingPlaceholder}>
-        <h1 class={`${style.blogtitle} loading`} >&nbsp;</h1>
-        <caption class={`${style.blogsubtitle} loading`}>&nbsp;</caption>
-        <div class={style.blogbody}>
-          <div class={`${style.loadingBody} loading`} />
-          <div class={`${style.loadingBody} loading`} />
-          <div class={`${style.loadingBody} loading`} />
-        </div>
-      </div>
-    );
-  }
-
-  if (data && data.data) {
-    const { details, content } = data.data;
-    return (
-      <div>
-        <h1>{details.title}</h1>
-        { details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
-        <div>
-          <Markdown options={{
-            overrides: {
-              img: {
-                component: InlineImage
-              },
-              blockquote: {
-                component: Quote
-              }
-            }
-          }}
-          >{ content }</Markdown>
-        </div>
-      </div>
-    );
-  }
+function InlineLink({ href, children }) {
+  return (
+    <a href={href} class="link">{ children }</a>
+  );
 }
 
-export default blogs;
+const Article = (props) => {
+  const [data, isLoading] = usePrerenderData(props);
+  const [state, setState] = useState({ details: { tags: '', date: null }, content: '' });
+
+  useEffect(() => {
+    if (data && data.data) {
+      const { details, content } = data.data;
+      setState((s) => ({ details, content }));
+      document.title = details.title;
+      console.log('use effect', details, content);
+    }
+
+  }, [data, isLoading]);
+
+  if (isLoading) {
+    return (<div class="isloading" />);
+  }
+
+  return (
+    <article class="cf ph3 ph5-ns pv5">
+      <header class="fn fl-ns w-50-ns pr4-ns">
+        <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">{ state.details.title }</h1>
+        <time class="f6 ttu tracked gray">{ format(new Date(state.details.date), 'dd MMMM, yyyy') }</time>
+        <div class="f4 lh-copy measure mt0-ns no-underline">
+          <Markdown options={{
+            overrides: {
+              a: { component: InlineLink },
+              img: { component: InlineImage },
+              blockquote: { component: InlineQuote }
+            }
+          }}
+          >{ state.content }</Markdown>
+        </div>
+        <div class="bt pv2">
+          <TagList tags={state.details.tags.split(',')} />
+        </div>
+      </header>
+      <div class="fn fl-ns w-50-ns no-underline">
+        <img src={state.details.cover} />
+      </div>
+    </article>
+  );
+};
+
+export default Article;
