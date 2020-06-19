@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import ArticleList from 'components/ArticleList';

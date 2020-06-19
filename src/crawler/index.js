@@ -27,11 +27,13 @@ function getDetails(format, data) {
 }
 
 function getFolders(source) {
-  const isDirectory = source => fs.lstatSync(source).isDirectory();
-  const isFile = source => !fs.lstatSync(source).isDirectory();
-  const getAllListings = source =>
-    fs.readdirSync(source).map(name => join(source, name));
+
+  const isDirectory = (source) => fs.lstatSync(source).isDirectory();
+  const isFile = (source) => !fs.lstatSync(source).isDirectory();
+  const getAllListings = (source) => fs.readdirSync(source).map(name => join(source, name));
+
   let allContent = getAllListings(source);
+
   const edges = allContent.filter(isFile).map(file => {
     const data = fs.readFileSync(file, 'utf-8');
     const id = file.substr(file.lastIndexOf(sep) + 1);
@@ -43,16 +45,21 @@ function getFolders(source) {
       details: getDetails(format, data)
     };
   });
+
   const nodes = allContent.filter(isDirectory).map(dir => getFolders(dir));
+
   const result = {
     id: source.substr(source.lastIndexOf(sep) + 1)
   };
+
   if (nodes.length) {
     result.nodes = nodes;
   }
+
   if (edges.length) {
     result.edges = edges;
   }
+
   return result;
 }
 

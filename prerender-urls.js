@@ -1,12 +1,12 @@
 const { generateFileList, getArticleContent } = require('./src/crawler');
 const { join } = require('path');
 
-const [articles] = generateFileList(join(__dirname, 'content')).nodes;
+const [articles, footerLinks] = generateFileList(join(__dirname, 'content')).nodes;
 
 module.exports = () => {
   const pages = [
     { url: '/', data: articles },
-    { url: '/contact/' },
+    { url: '/contact/', data: footerLinks },
     { url: '/contact/success' }
   ];
   let posts = articles.edges.filter(a => a.format === 'md').map(getArticleContent);

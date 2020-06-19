@@ -6,10 +6,11 @@ import SiteHeader from 'components/SiteHeader';
 import SiteFooter from 'components/SiteFooter';
 
 // Code-splitting is automated for routes
-import Home from 'routes/home';
+import About from 'routes/about';
 import Article from 'routes/article';
 import Contact from 'routes/contact';
 import ContactSuccess from 'routes/contact-success';
+import Home from 'routes/home';
 import NotFoundPage from 'routes/notfound';
 
 export default class App extends Component {
@@ -23,16 +24,20 @@ export default class App extends Component {
 	};
 
 	render (props) {
+
+    console.log(props);
+
 	  return (
 	    <Provider value={props}>
 	      <div id="app" class="w-100 sans-serif">
 	        <SiteHeader />
-          <Router onChange={this.handleRoute}>
-	          <Home path="/" />
+	        <Router onChange={this.handleRoute}>
+	          <About path="/about/" />
+	          <Article path="/article/:name/" />
 	          <Contact path="/contact/" />
 	          <ContactSuccess path="/contact/success/" />
+	          <Home path="/" />
 	          <NotFoundPage type="404" default />
-	          <Article path="/article/:name/" />
 	        </Router>
 	        <SiteFooter />
 	      </div>
