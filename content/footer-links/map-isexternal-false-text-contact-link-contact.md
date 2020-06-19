@@ -1,5 +1,5 @@
 ---
-text: Contact
-link: /contact
+text: About
+link: /about
 isExternal: false
 ---
