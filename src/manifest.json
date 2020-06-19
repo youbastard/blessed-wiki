@@ -1,6 +1,6 @@
 {
-  "name": "blog",
-  "short_name": "blog",
+  "name": "Blessed Wiki",
+  "short_name": "blessed-wiki",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

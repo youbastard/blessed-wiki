@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
+		<% if(htmlWebpackPlugin.options.seo && 'slug' in htmlWebpackPlugin.options.seo) {%>
+			<link rel="canonical" href="https://blessed.wiki/article/<%= htmlWebpackPlugin.options.seo.slug %>/" />
+		<% } %>
 		<meta property="og:title" content="<%= (htmlWebpackPlugin.options.seo && htmlWebpackPlugin.options.seo.title) || htmlWebpackPlugin.options.title %>" />
 		<% if(htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) {%>
 			<meta property="og:image" content="<%= htmlWebpackPlugin.options.seo.cover %>" />

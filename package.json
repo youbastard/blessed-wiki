@@ -5,9 +5,6 @@
   "version": "0.1.2",
   "license": "MIT",
   "scripts": {
-    "start": "per-env",
-    "start:production": "npm run -s serve",
-    "start:development": "npm run -s dev",
     "build": "preact build --prerenderUrls ./prerender-urls.js",
     "dev": "preact watch --prerenderUrls ./prerender-urls.js",
     "lint": "eslint src --fix",
@@ -22,7 +19,6 @@
     "jest": "^21.2.1",
     "jest-preset-preact": "^1.0.0",
     "markdown": "^0.5.0",
-    "per-env": "^1.0.2",
     "preact-cli": "^3.0.0-rc.7",
     "preact-render-spy": "^1.2.1",
     "react-syntax-highlighter": "^12.2.1",
@@ -56,5 +52,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/preactjs/preact-netlify.git"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "resolutions": {
+    "@babel/parser": "7.7.5"
   }
 }

@@ -29,11 +29,8 @@ const Article = (props) => {
   useEffect(() => {
     if (data && data.data) {
       const { details, content } = data.data;
-      setState((s) => ({ details, content }));
-      document.title = details.title;
-      console.log('use effect', details, content);
+      setState((s) => ({ ...s, details, content }));
     }
-
   }, [data, isLoading]);
 
   if (isLoading) {

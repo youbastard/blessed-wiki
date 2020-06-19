@@ -38,9 +38,12 @@ Do not add `preact build --no-prerender` to the build command as it will prevent
 
 ### TODO
 
+- ✅Remove .md extension from urls
+- Add Search
 - Add sitemaps - https://github.com/netlify-labs/netlify-plugin-sitemap#readme
-- Remove .md extension from urls
 - Add meta description
+- Friends list
+- Archive page
 - Generate image posts for image attribution
 - Auto fix lint errors on save
 - Auto restart dev server on error

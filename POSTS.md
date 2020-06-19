@@ -9,6 +9,7 @@ A list of wikipages for upcoming posts
 - ✅[Kraft Singles](https://en.wikipedia.org/wiki/Kraft_Singles)
 - ✅[Cyclops Laser](https://en.wikipedia.org/wiki/Cyclops_laser)
 - ✅[Cybertruck](https://en.wikipedia.org/wiki/Tesla_Cybertruck)
+- ✅[Ballooning](https://en.wikipedia.org/wiki/Ballooning_(spider))
 - [Paradox of the Heap](https://en.wikipedia.org/wiki/Sorites_paradox)
 - [Murmuration](https://en.wikipedia.org/wiki/Flocking_\(behavior\))
 - [Anatoli Bugorski](https://en.wikipedia.org/wiki/Anatoli_Bugorski)
@@ -19,7 +20,6 @@ A list of wikipages for upcoming posts
 - [Mahamaham Stampede](https://en.wikipedia.org/wiki/Mahamaham_stampede)
 - [The Z Machine](https://en.wikipedia.org/wiki/Z_Pulsed_Power_Facility)
 - [Pyotr Dolgov](https://en.wikipedia.org/wiki/Pyotr_Dolgov)
-- [Ballooning](https://en.wikipedia.org/wiki/Ballooning_(spider))
 
 --- 
 

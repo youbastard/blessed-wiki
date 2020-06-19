@@ -27,11 +27,11 @@ module.exports = (config, env, helpers) => {
   env.production && !env.ssr && config.plugins.push(new ImageminPlugin({
     from: './build/assets/**',
     pngquant: {
-      quality: '90'
+      quality: '60'
     },
     plugins: [
       imageminMozjpeg({
-        quality: 90,
+        quality: 70,
         progressive: true
       })
     ]

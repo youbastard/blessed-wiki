@@ -26,13 +26,6 @@ function getDetails(format, data) {
   }
 }
 
-function getPreview(data) {
-  const { content } = parseMD(data);
-  let preview = content.replace(/---(.*(\r)?\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/(\r)?\n/,'');
-  preview = preview.substr(0, (preview.indexOf('\n') -1));
-  return preview.length < 500? preview : preview.substr(0, 500);
-}
-
 function getFolders(source) {
   const isDirectory = source => fs.lstatSync(source).isDirectory();
   const isFile = source => !fs.lstatSync(source).isDirectory();
@@ -47,8 +40,7 @@ function getFolders(source) {
       id,
       format,
       path: file,
-      details: getDetails(format, data),
-      preview: getPreview(data)
+      details: getDetails(format, data)
     };
   });
   const nodes = allContent.filter(isDirectory).map(dir => getFolders(dir));
@@ -68,6 +60,21 @@ function generateFileList(src) {
   return getFolders(src);
 }
 
+function getArticleContent(article) {
+  const path = join('content', 'articles', article.id);
+  const file = fs.readFileSync(path, 'utf-8');
+  const { content } = parseMD(file);
+  return {
+    url: `/article/${article.details.slug}`,
+    seo: article.details,
+    data: {
+      details: article.details,
+      content
+    }
+  };
+}
+
 module.exports = {
-  generateFileList
+  generateFileList,
+  getArticleContent
 };

@@ -1,14 +1,11 @@
 import { h } from 'preact';
-import style from './style';
 
-const photographs = (props) => (
-  <div class={style.pageContact}>
-    <h1 class={style.pageTitle}>Contact me</h1>
-    <div class={style.formWrapper}>
-      <p class={style.pageBody}>
+const Contact = (props) => (
+  <div>
+    <h1>Contact me</h1>
+    <div>
+      <p>
         <div>Hi!</div>
-        <div>If you are interested in my work and are looking to contact me for a contract please use the following form to contact me.</div>
-        <div>&nbsp;</div>
         <div>Cheers 🍻</div>
       </p>
       <form name="contact" method="POST" data-netlify="true" action="/contact/success" data-netlify-honeypot="bot-field">
@@ -30,4 +27,4 @@ const photographs = (props) => (
   </div>
 );
 
-export default photographs;
+export default Contact;
