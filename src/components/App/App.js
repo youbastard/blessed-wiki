@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import SiteHeader from 'components/SiteHeader';
+import SiteFooter from 'components/SiteFooter';
 
 // Code-splitting is automated for routes
 import Home from 'routes/home';
@@ -25,8 +25,8 @@ export default class App extends Component {
 	render (props) {
 	  return (
 	    <Provider value={props}>
-	      <div id="app">
-	        <Header />
+	      <div id="app" class="w-100 sans-serif">
+	        <SiteHeader />
 	        <Router onChange={this.handleRoute}>
 	          <Home path="/" />
 	          <Article path="/article/:name" />
@@ -34,7 +34,7 @@ export default class App extends Component {
 	          <ContactSuccess path="/contact/success" />
 	          <NotFoundPage type="404" default />
 	        </Router>
-	        <Footer />
+	        <SiteFooter />
 	      </div>
 	    </Provider>
 	  );
