@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { Link } from 'preact-router';
-import TagList from 'components/TagList';
+// import TagList from 'components/TagList';
 
 const ArticleListItem = ({ article }) => {
   const tags = article.details.tags.split(',');
@@ -11,7 +11,7 @@ const ArticleListItem = ({ article }) => {
           <h2>{article.details.title}</h2>
         </Link>
         <p>{article.details.subtitle}</p>
-        <TagList tags={tags} />
+        {/* <TagList tags={tags} /> */}
       </article>
     </section>
   );
