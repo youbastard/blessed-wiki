@@ -6,7 +6,7 @@ const Home = (props) => {
   const [data, isLoading] = usePrerenderData(props);
   return (
     <div class="pa3 pa4-ns">
-      {/* { !isLoading && data && data.data && <ArticleList items={data.data.edges} /> } */}
+      { !isLoading && data && data.data && <ArticleList items={data.data.edges} /> }
     </div>
   );
 };
