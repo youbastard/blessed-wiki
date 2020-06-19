@@ -1,7 +1,6 @@
 import { h } from 'preact';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import ArticleList from 'components/ArticleList';
-import Tag from 'components/Tag';
 
 const Home = (props) => {
   const [data, isLoading] = usePrerenderData(props);

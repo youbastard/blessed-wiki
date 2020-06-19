@@ -7,7 +7,7 @@ const ArticleListItem = ({ article }) => {
   return (
     <section>
       <article>
-        <Link href={`/article/${article.id}`}>
+        <Link class="link" href={`/article/${article.id}`}>
           <h2>{article.details.title}</h2>
         </Link>
         <p>{article.details.subtitle}</p>

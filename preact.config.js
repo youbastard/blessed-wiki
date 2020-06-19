@@ -3,6 +3,9 @@ const path = require('path');
 const netlifyPlugin = require('preact-cli-plugin-netlify');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: ['./src/**/*.js']
+});
 
 import { lstatSync, readdirSync } from 'fs';
 
@@ -16,7 +19,7 @@ const getDirectories = (source) => {
     .filter(isDirectory);
 };
 
-module.exports = (config, env) => {
+module.exports = (config, env, helpers) => {
   netlifyPlugin(config);
   getDirectories('src/').map((dir) => {
     config.resolve.alias[dir.replace('src/', '')] = path.resolve(__dirname, dir);
@@ -33,5 +36,13 @@ module.exports = (config, env) => {
       })
     ]
   }));
+  const postCssLoaders = helpers.getLoadersByName(config, 'postcss-loader');
+  postCssLoaders.forEach(({ loader }) => {
+    const plugins = loader.options.plugins;
+    // Add PurgeCSS only in production.
+    if (env.production) {
+      plugins.push(purgecss);
+    }
+  });
   return config;
 };
