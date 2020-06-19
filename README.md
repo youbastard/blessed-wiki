@@ -1,8 +1,10 @@
 # Blessed Wiki
 
-https://blessed.wiki
-
-Github: https://github.com/youbastard/blessed-wiki
+- Production: https://blessed.wiki
+- Dev: https://blessed-wiki.netlify.app/
+- CMS Admin: https://blessed-wiki.netlify.app/admin
+- Netlify Dashboard: https://app.netlify.com/sites/blessed-wiki/overview
+- Github: https://github.com/youbastard/blessed-wiki
 
 ## CLI Commands
 
