@@ -12,6 +12,7 @@ import Contact from 'routes/contact';
 import ContactSuccess from 'routes/contact-success';
 import Home from 'routes/home';
 import NotFoundPage from 'routes/notfound';
+import Page from 'routes/page';
 
 export default class App extends Component {
 
@@ -29,16 +30,19 @@ export default class App extends Component {
 
 	  return (
 	    <Provider value={props}>
-	      <div id="app" class="w-100 sans-serif">
+	      <div id="app" class="w-100 min-vh-100 sans-serif flex flex-column">
 	        <SiteHeader />
-	        <Router onChange={this.handleRoute}>
-	          <About path="/about/" />
-	          <Article path="/article/:name/" />
-	          <Contact path="/contact/" />
-	          <ContactSuccess path="/contact/success/" />
-	          <Home path="/" />
-	          <NotFoundPage type="404" default />
-	        </Router>
+	        <div class="flex-auto ph3 ph5-ns pv3">
+	          <Router onChange={this.handleRoute}>
+	            <About path="/about/" />
+	            <Article path="/article/:slug/" />
+	            <Contact path="/contact/" />
+	            <ContactSuccess path="/contact/success/" />
+	            <Home path="/" />
+	            <NotFoundPage type="404" default />
+	            <Page path="/page/:page/" />
+	          </Router>
+	        </div>
 	        <SiteFooter />
 	      </div>
 	    </Provider>

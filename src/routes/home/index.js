@@ -14,7 +14,7 @@ const Home = (props) => {
   }, [data, isLoading]);
 
   return (
-    <div class="ph3 ph5-ns pv3">
+    <div>
       { !isLoading && data && data.articles && <ArticleList items={state.items} /> }
     </div>
   );

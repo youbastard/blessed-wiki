@@ -33,11 +33,11 @@ a blog about wikipedia posts that i find interesting
 ### TODO
 
 - ✅Remove .md extension from urls
+- ✅Add Favicon
+- ✅Add meta description
+- Sort posts by date
 - Add Search
 - Add sitemaps - https://github.com/netlify-labs/netlify-plugin-sitemap#readme
-- Add meta description
-- Add Favicon
-- Remove other icons
 - Add footer links from post data
 - Friends list
 - Archive page
@@ -51,7 +51,7 @@ a blog about wikipedia posts that i find interesting
 - ✅[Cyclops Laser](https://en.wikipedia.org/wiki/Cyclops_laser)
 - ✅[Cybertruck](https://en.wikipedia.org/wiki/Tesla_Cybertruck)
 - ✅[Ballooning](https://en.wikipedia.org/wiki/Ballooning_(spider))
-- [Death Poem](https://en.wikipedia.org/wiki/Death_poem)
+- ✅[Death Poem](https://en.wikipedia.org/wiki/Death_poem)
 - [Paradox of the Heap](https://en.wikipedia.org/wiki/Sorites_paradox)
 - [Murmuration](https://en.wikipedia.org/wiki/Flocking_\(behavior\))
 - [Anatoli Bugorski](https://en.wikipedia.org/wiki/Anatoli_Bugorski)

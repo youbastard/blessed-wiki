@@ -4,12 +4,12 @@ import TagList from 'components/TagList';
 const ArticleListItem = ({ article }) => {
   const tags = article.details.tags.split(',');
   return (
-    <section>
+    <section class="mb4">
       <article>
-        <Link class="link" href={`/article/${article.details.slug}/`}>
-          <h2>{article.details.title}</h2>
+        <Link class="link black" href={`/article/${article.details.slug}/`}>
+          <h2 class="mb1">{article.details.title}</h2>
         </Link>
-        <p>{article.details.subtitle}</p>
+        {/* <p>{article.details.subtitle}</p> */}
         <TagList tags={tags} />
       </article>
     </section>

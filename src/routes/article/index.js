@@ -2,25 +2,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { usePrerenderData } from '@preact/prerender-data-provider';
-import format from 'date-fns/format';
-import Markdown from 'markdown-to-jsx';
-import TagList from 'components/TagList';
-import InlineQuote from 'components/Quote';
-
-function InlineImage({ alt, title, src }) {
-  return (
-    <div>
-      <img src={src} alt={alt} />
-      {title && <span>{title}</span>}
-    </div>
-  );
-}
-
-function InlineLink({ href, children }) {
-  return (
-    <a href={href} class="link" style={{ color: '#f35b00' }}>{ children }</a>
-  );
-}
+import ArticlePost from 'components/Article/Post';
 
 const Article = (props) => {
   const [data, isLoading] = usePrerenderData(props);
@@ -38,28 +20,7 @@ const Article = (props) => {
   }
 
   return (
-    <article class="cf ph3 ph5-ns pv3">
-      <header class="fn fl-ns w-50-ns pr4-ns">
-        <h1 class="f1 lh-title fw6 mb3 mt0 pt3">{ state.details.title }</h1>
-        <time class="f6 ttu tracked">{ format(new Date(state.details.date), 'dd MMMM, yyyy') }</time>
-        <div class="f4 lh-copy measure mt0-ns no-underline">
-          <Markdown options={{
-            overrides: {
-              a: { component: InlineLink },
-              img: { component: InlineImage },
-              blockquote: { component: InlineQuote }
-            }
-          }}
-          >{ state.content }</Markdown>
-        </div>
-        <div class="pv2">
-          <TagList tags={state.details.tags.split(',')} />
-        </div>
-      </header>
-      <div class="fn fl-ns w-50-ns no-underline">
-        {/* <img src={state.details.cover} /> */}
-      </div>
-    </article>
+    <ArticlePost article={state} />
   );
 };
 
