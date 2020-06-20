@@ -5,8 +5,8 @@ const [articles, footerLinks] = generateFileList(join(__dirname, 'content')).nod
 
 module.exports = () => {
   const pages = [
-    { url: '/', data: articles },
-    { url: '/contact/', data: footerLinks },
+    { url: '/', articles },
+    { url: '/contact/', footerLinks },
     { url: '/contact/success' }
   ];
   let posts = articles.edges.filter(a => a.format === 'md').map(getArticleContent);

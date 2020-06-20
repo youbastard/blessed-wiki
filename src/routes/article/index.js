@@ -18,7 +18,7 @@ function InlineImage({ alt, title, src }) {
 
 function InlineLink({ href, children }) {
   return (
-    <a href={href} class="link">{ children }</a>
+    <a href={href} class="link" style={{ color: '#f35b00' }}>{ children }</a>
   );
 }
 
@@ -27,8 +27,8 @@ const Article = (props) => {
   const [state, setState] = useState({ details: { tags: '', date: null }, content: '' });
 
   useEffect(() => {
-    if (data && data.data) {
-      const { details, content } = data.data;
+    if (data) {
+      const { details, content } = data;
       setState((s) => ({ ...s, details, content }));
     }
   }, [data, isLoading]);
@@ -38,10 +38,10 @@ const Article = (props) => {
   }
 
   return (
-    <article class="cf ph3 ph5-ns pv5">
+    <article class="cf ph3 ph5-ns pv3">
       <header class="fn fl-ns w-50-ns pr4-ns">
-        <h1 class="f2 lh-title fw9 mb3 mt0 pt3 bt bw2">{ state.details.title }</h1>
-        <time class="f6 ttu tracked gray">{ format(new Date(state.details.date), 'dd MMMM, yyyy') }</time>
+        <h1 class="f1 lh-title fw6 mb3 mt0 pt3">{ state.details.title }</h1>
+        <time class="f6 ttu tracked">{ format(new Date(state.details.date), 'dd MMMM, yyyy') }</time>
         <div class="f4 lh-copy measure mt0-ns no-underline">
           <Markdown options={{
             overrides: {
@@ -52,12 +52,12 @@ const Article = (props) => {
           }}
           >{ state.content }</Markdown>
         </div>
-        <div class="bt pv2">
+        <div class="pv2">
           <TagList tags={state.details.tags.split(',')} />
         </div>
       </header>
       <div class="fn fl-ns w-50-ns no-underline">
-        <img src={state.details.cover} />
+        {/* <img src={state.details.cover} /> */}
       </div>
     </article>
   );

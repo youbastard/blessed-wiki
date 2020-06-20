@@ -5,48 +5,32 @@
 		<title><% preact.title %></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<% if(htmlWebpackPlugin.options.seo && 'slug' in htmlWebpackPlugin.options.seo) {%>
-			<link rel="canonical" href="https://blessed.wiki/article/<%= htmlWebpackPlugin.options.seo.slug %>/" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+		<% if(htmlWebpackPlugin.options.details && 'slug' in htmlWebpackPlugin.options.details) {%>
+			<link rel="canonical" href="https://blessed.wiki/article/<%= htmlWebpackPlugin.options.details.slug %>/" />
 		<% } %>
-		<meta property="og:title" content="<%= (htmlWebpackPlugin.options.seo && htmlWebpackPlugin.options.seo.title) || htmlWebpackPlugin.options.title %>" />
-		<% if(htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) {%>
-			<meta property="og:image" content="<%= htmlWebpackPlugin.options.seo.cover %>" />
+		<meta property="og:title" content="<%= (htmlWebpackPlugin.options.details && htmlWebpackPlugin.options.details.title) || htmlWebpackPlugin.options.title %>" />
+		<% if(htmlWebpackPlugin.options.details && 'cover' in htmlWebpackPlugin.options.details) {%>
+			<meta property="og:image" content="<%= htmlWebpackPlugin.options.details.cover %>" />
 		<% } %>
-		<% if(htmlWebpackPlugin.options.seo && 'subtitle' in htmlWebpackPlugin.options.seo) {%>
-			<meta property="og:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
-			<meta property="description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
+		<% if(htmlWebpackPlugin.options.details && 'subtitle' in htmlWebpackPlugin.options.details) {%>
+			<meta property="og:description" content="<%= htmlWebpackPlugin.options.details.subtitle %>" />
+      <meta property="description" content="<%= htmlWebpackPlugin.options.details.subtitle %>" />
+			<meta name="Description" content="<%= htmlWebpackPlugin.options.details.subtitle %>" />
 		<% } %>
-		<meta name="twitter:card" content="<%= (htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) ? 'summary_large_image' : 'summary'%>" />
-		<% if(htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) {%>
-			<meta name="twitter:image" content="<%= htmlWebpackPlugin.options.seo.cover %>">
+		<meta name="twitter:card" content="<%= (htmlWebpackPlugin.options.details && 'cover' in htmlWebpackPlugin.options.details) ? 'summary_large_image' : 'summary'%>" />
+		<% if(htmlWebpackPlugin.options.details && 'cover' in htmlWebpackPlugin.options.details) {%>
+			<meta name="twitter:image" content="<%= htmlWebpackPlugin.options.details.cover %>">
 		<% } %>
-		<% if(htmlWebpackPlugin.options.seo && 'subtitle' in htmlWebpackPlugin.options.seo) {%>
-			<meta property="twitter:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
+		<% if(htmlWebpackPlugin.options.details && 'subtitle' in htmlWebpackPlugin.options.details) {%>
+			<meta property="twitter:description" content="<%= htmlWebpackPlugin.options.details.subtitle %>" />
 		<% } %>
 		<% preact.headEnd %>
 	</head>
 	<body style="margin:0; padding:0;">
     <div id="preact_root"></div>
-
-
-		<script type="__PREACT_CLI_DATA__">
-      <%= JSON.stringify(htmlWebpackPlugin.options.CLI_DATA) %>
-    </script>
-		<% if (webpack.assets.filter(entry => entry.name.match(/bundle(\.\w{5})?.esm.js$/)).length > 0) { %>
-		<% /* Fix for safari < 11 nomodule bug. TODO: Do the following only for safari. */ %>
-		<script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()},!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
-		<script crossorigin="anonymous" src="<%= htmlWebpackPlugin.files.publicPath %><%= webpack.assets.filter(entry => entry.name.match(/bundle(\.\w{5})?.esm.js$/))[0].name %>" type="module"></script>
-		<%
-		/*Fetch and Promise polyfills are not needed for browsers that support type=module
-		Please re-evaluate below line if adding more polyfills.*/
-		%>
-		<script nomodule src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"></script>
-		<script nomodule defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
-		<% } else { %>
-		<script <%= htmlWebpackPlugin.options.scriptLoading %>  src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
-		<script nomodule src="<%= htmlWebpackPlugin.files.chunks["polyfills"].entry %>"></script>
-		<% } %>
-
+		<% preact.bodyEnd %>
 	</body>
 </html>

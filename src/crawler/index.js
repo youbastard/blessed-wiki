@@ -73,11 +73,8 @@ function getArticleContent(article) {
   const { content } = parseMD(file);
   return {
     url: `/article/${article.details.slug}`,
-    seo: article.details,
-    data: {
-      details: article.details,
-      content
-    }
+    details: article.details,
+    content
   };
 }
 

@@ -28,6 +28,7 @@ a blog about wikipedia posts that i find interesting
 - https://headlesscms.org/projects/netlify-cms
 - https://www.staticgen.com/
 - https://github.com/developit/preact-markup
+- https://github.com/devalexandre/preact-ssr/tree/master/template
 
 ### TODO
 
@@ -50,6 +51,7 @@ a blog about wikipedia posts that i find interesting
 - ✅[Cyclops Laser](https://en.wikipedia.org/wiki/Cyclops_laser)
 - ✅[Cybertruck](https://en.wikipedia.org/wiki/Tesla_Cybertruck)
 - ✅[Ballooning](https://en.wikipedia.org/wiki/Ballooning_(spider))
+- [Death Poem](https://en.wikipedia.org/wiki/Death_poem)
 - [Paradox of the Heap](https://en.wikipedia.org/wiki/Sorites_paradox)
 - [Murmuration](https://en.wikipedia.org/wiki/Flocking_\(behavior\))
 - [Anatoli Bugorski](https://en.wikipedia.org/wiki/Anatoli_Bugorski)

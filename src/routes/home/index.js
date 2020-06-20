@@ -7,15 +7,15 @@ const Home = (props) => {
   const [state, setState] = useState({ items: [] });
 
   useEffect(() => {
-    if (data && data.data) {
-      const items = data.data.edges;
+    if (data && data.articles) {
+      const items = data.articles.edges;
       setState((s) => ({ ...s, items }));
     }
   }, [data, isLoading]);
 
   return (
-    <div class="pa3 pa4-ns">
-      { !isLoading && data && data.data && <ArticleList items={state.items} /> }
+    <div class="ph3 ph5-ns pv3">
+      { !isLoading && data && data.articles && <ArticleList items={state.items} /> }
     </div>
   );
 };
