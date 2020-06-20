@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
 
-import SiteHeader from 'components/SiteHeader';
-import SiteFooter from 'components/SiteFooter';
+import SiteHeader from 'components/SiteHeader/SiteHeader';
+import SiteFooter from 'components/SiteFooter/SiteFooter';
 
 // Code-splitting is automated for routes
 import About from 'routes/about';
@@ -25,7 +25,7 @@ export default class App extends Component {
 
 	render (props) {
 
-    console.log(props);
+	  console.log(props);
 
 	  return (
 	    <Provider value={props}>

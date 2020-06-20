@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { Link } from 'preact-router';
 
 const Tag = ({ tag }) => (

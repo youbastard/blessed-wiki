@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import Tag from 'components/Tag';
 
 const TagList = ({ tags }) => (
