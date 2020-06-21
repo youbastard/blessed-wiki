@@ -57,6 +57,12 @@ function getFolders(source) {
   }
 
   if (edges.length) {
+    // sort edges by date descending
+    edges.sort((a, b) => {
+      let dA = new Date(a.details.date);
+      let dB = new Date(b.details.date);
+      return dB - dA;
+    });
     result.edges = edges;
   }
 

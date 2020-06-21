@@ -35,7 +35,7 @@ a blog about wikipedia posts that i find interesting
 - ✅Remove .md extension from urls
 - ✅Add Favicon
 - ✅Add meta description
-- Sort posts by date
+- ✅Sort posts by date
 - Add Search
 - Add sitemaps - https://github.com/netlify-labs/netlify-plugin-sitemap#readme
 - Add footer links from post data
