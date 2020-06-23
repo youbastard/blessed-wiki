@@ -7,9 +7,11 @@ export default {
 };
 
 export const Basic = () => (
-  <ArticleQuote>
-    It was that impossible thing - happiness which
-    does not fade to reveal the thin shoots of some
-    new desire rising from within it.
-  </ArticleQuote>
+  <section class="pa3">
+    <ArticleQuote>
+      It was that impossible thing - happiness which
+      does not fade to reveal the thin shoots of some
+      new desire rising from within it.
+    </ArticleQuote>
+  </section>
 );

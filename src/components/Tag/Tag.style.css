@@ -1,0 +1,15 @@
+/**
+  * this cool effect is from https://www.11ty.dev/
+  **/
+.tag:hover {
+  border: none;
+  background-image: linear-gradient(238deg,#ff8000,#ff0,#80ff00,#00ff80,#0ff);
+  background-size: 800% 800%;
+  background-position: 0 20%;
+  animation: rainbow 2s ease-out alternate infinite;
+}
+
+@keyframes rainbow {
+  0% {background-position:0% 50%}
+  100% {background-position:100% 50%}
+}

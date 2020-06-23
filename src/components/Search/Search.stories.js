@@ -7,5 +7,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Search />
+  <section class="pa3">
+    <Search />
+  </section>
 );

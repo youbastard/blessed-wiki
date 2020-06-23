@@ -7,5 +7,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Tag>Hello Button</Tag>
+  <section class="pa3">
+    <Tag>Hello Button</Tag>
+  </section>
 );

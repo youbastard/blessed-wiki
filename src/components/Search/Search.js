@@ -1,14 +1,12 @@
 import { h } from 'preact';
 
-import Icon from 'assets/icons/search.svg';
-
 const Search = () => (
-  <div>
-    <img src={Icon} />
+  <div class="relative">
     <input
-      class="pa2 input-reset ba bg-transparent w-100 measure"
+      class="pa2 input-reset ba bg-transparent w-100 br-pill sans-serif"
       type="search"
       name="search-tags"
+      placeholder="search"
       aria-label="search input"
     />
   </div>
