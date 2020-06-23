@@ -1,5 +1,7 @@
 # Blessed Wiki
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c9d0e2d-20fb-434c-8a78-96517ad4880e/deploy-status)](https://app.netlify.com/sites/blessed-wiki/deploys)
+
 a blog about wikipedia posts that i find interesting
 
 ### Info
@@ -29,6 +31,7 @@ a blog about wikipedia posts that i find interesting
 - https://www.staticgen.com/
 - https://github.com/developit/preact-markup
 - https://github.com/devalexandre/preact-ssr/tree/master/template
+- https://preactjs.com/cli/pre-rendering
 
 ### TODO
 

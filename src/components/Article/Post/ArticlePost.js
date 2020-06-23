@@ -1,3 +1,5 @@
+import { h } from 'preact';
+
 import format from 'date-fns/format';
 import Markdown from 'markdown-to-jsx';
 import TagList from 'components/TagList';

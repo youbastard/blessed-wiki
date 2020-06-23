@@ -1,3 +1,5 @@
+import { h } from 'preact';
+
 import { Link } from 'preact-router';
 import TagList from 'components/TagList';
 
@@ -6,7 +8,7 @@ const ArticleListItem = ({ article }) => {
   return (
     <section class="mb4">
       <article>
-        <Link class="link black" href={`/article/${article.details.slug}/`}>
+        <Link class="link dark-gray" href={`/article/${article.details.slug}/`}>
           <h2 class="mb1">{article.details.title}</h2>
         </Link>
         {/* <p>{article.details.subtitle}</p> */}

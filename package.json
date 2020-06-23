@@ -8,10 +8,18 @@
     "build": "preact build --prerenderUrls ./prerender-urls.js",
     "dev": "preact watch --prerenderUrls ./prerender-urls.js",
     "lint": "eslint src --fix",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.3",
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preact": "^5.3.19",
+    "babel-loader": "^8.1.0",
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
     "esm": "^3.2.25",

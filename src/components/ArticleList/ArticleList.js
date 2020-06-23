@@ -1,3 +1,5 @@
+import { h } from 'preact';
+
 import ArticleListItem from 'components/ArticleListItem';
 
 const ArticleList = ({ items }) => (

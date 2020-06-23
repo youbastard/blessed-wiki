@@ -39,6 +39,7 @@ module.exports = (config, env, helpers) => {
   const postCssLoaders = helpers.getLoadersByName(config, 'postcss-loader');
   postCssLoaders.forEach(({ loader }) => {
     const plugins = loader.options.plugins;
+
     // Add PurgeCSS only in production.
     if (env.production) {
       plugins.push(purgecss);

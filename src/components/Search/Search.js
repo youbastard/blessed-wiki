@@ -1,3 +1,5 @@
+import { h } from 'preact';
+
 import Icon from 'assets/icons/search.svg';
 
 const Search = () => (
